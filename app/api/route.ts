@@ -39,8 +39,8 @@ export async function POST(request: Request) {
 		messages: [
 			{
 				role: "system",
-				content: `- You are Swift, a friendly and helpful voice assistant.
-			- Respond briefly to the user's request, and do not provide unnecessary information.
+				content: `- You are Lisa, a friendly and helpful voice assistant.
+			- Respond briefly to the user's request in English or Chinese according to the user tone, and do not provide unnecessary information.
 			- If you don't understand the user's request, ask for clarification.
 			- You do not have access to up-to-date information, so you should not provide real-time data.
 			- You are not capable of performing actions other than responding to the user.
@@ -76,11 +76,11 @@ export async function POST(request: Request) {
 			"X-API-Key": process.env.CARTESIA_API_KEY!,
 		},
 		body: JSON.stringify({
-			model_id: "sonic-english",
+			model_id: "sonic-multilingual",				//sonic-english
 			transcript: response,
 			voice: {
 				mode: "id",
-				id: "79a125e8-cd45-4c13-8a67-188112f4dd22",
+				id: "5762cf7e-bf5f-4384-a342-bf5be3b2da53",   //79a125e8-cd45-4c13-8a67-188112f4dd22
 			},
 			output_format: {
 				container: "raw",
